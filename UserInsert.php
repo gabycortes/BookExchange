@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
+
 <body>
 <?php
-	include("Connect_Database.php");
-?>
+    include("connect_database.php");
+    ?>   
 <?php
-	$userInsert = "insert into users values('" . 
-		$_POST["name"] .
-		"', '" .
-		$_POST["email"] .
-		"')";
+$userInsert = "insert into users values('" . 
+$_POST["name"] . // post recieves parameter from the user/web
+"', '" .
+$_POST["email"] .
+"')";
 
-	$result = mysqli_query($connect, $userInsert); 
+$result = mysqli_query($connect, $userInsert); 
 ?>
 </body>
 </html>
