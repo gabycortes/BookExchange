@@ -8,7 +8,7 @@
 <?php
 date_default_timezone_set("America/Los_Angeles");
 	$currentTime = date("Y-m-d H:i:s");
-	print ($currentTime);
+	// print ($currentTime);
 ?>
 <?php
 	if ($_FILES["pic"])
@@ -16,14 +16,14 @@ date_default_timezone_set("America/Los_Angeles");
 		$pathname = "images/" . $_FILES['pic']['name'];
 		move_uploaded_file($_FILES['pic']['tmp_name'], $pathname);
 	}
-	print ($pathname);
+	// print ($pathname);
 
 ?>
 <?php
 	include("Connect_Database.php");
 ?>
 
-<!-- <?php
+<?php
 	$bookInsert = "insert into books values(null, '" . 
 		$_POST["name"] .
 		"', '" .
@@ -35,11 +35,14 @@ date_default_timezone_set("America/Los_Angeles");
 		"', '" .
 		$currentTime .
 		"', '" .
+		$pathname .
 
 		"')";
 
-	$result = mysqli_query($connect, $userInsert); 
-?> -->
+	$result = mysqli_query($connect, $bookInsert); 
+
+	header("Location: shopping.php")
+?>
 
 </body>
 </html>
