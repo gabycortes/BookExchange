@@ -51,8 +51,6 @@
 		print $row["picpath"] . "' height = 80px width = 80px>";
 		print "</td>";
 		print "<td>";
-		// $book = 'bookId=' . $row["bookId"] . '&booktitle=' . $row["title"] .
-		// '&bookname=' . $row["name"] . '&picpath=' $row["picpath"];
 		print "<a href='AddCart.php?";
 		print "bookId=" . $row["bookId"] .  '&name=' . $_GET['name'] . '&email=' . $_GET['email'] . "'>";
 		print "ADD TO CART";
