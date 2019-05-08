@@ -6,7 +6,7 @@
 </head>
 <body>
 <p align="center"> User Enroll Page</p>
-<form action="UserInsert.php" method="post">
+<form action="UserInsert.php" enctype="multipart/form-data" method="post">
 <table align="center">
 	<tr>
 		<td>

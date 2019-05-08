@@ -13,7 +13,7 @@
 <?php
 	if ($_FILES["picture"])
 	{
-		$pathname = "pictures/" . $_FILES['picture']['name'];
+		$pathname2 = "pictures/" . $_FILES['picture']['name'];
 		move_uploaded_file($_FILES['picture']['tmp_name'], $pathname2);
 	}
 	$userInsert = "insert into users values(null, '" . 
@@ -27,8 +27,8 @@
 		"')";
 
 	$result = mysqli_query($connect, $userInsert); 
-	print $picpath;
-	//header("Location: login.php")
+	
+	header("Location: login.php")
 ?>
 </body>
 </html>
