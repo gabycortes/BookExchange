@@ -6,14 +6,16 @@
 </head>
 
 <body>
+
 <?php
 	include("Connect_Database.php");
 ?>
 
 <?php
 	$searchUser = "select * from users where " .
-		"name='" . $_POST["name"] . "' and " . 
+		"name='" . $_POST["name"] . "' and " .		
 		"email='" . $_POST["email"] . "'";
+		
 	print $_POST["name"];
 	print $searchUser;
 	$results = mysqli_query($connect, $searchUser);
@@ -26,9 +28,14 @@
 
 	if (mysqli_num_rows($results) > 0)
 	{
+		session_start();
+		$_SESSION['name'] = $_POST["name"];
+		$_SESSION['email'] = $_POST["email"];
+		$_SESSION['picpath'] = $_POST["picpath"];
+		$_SESSION['bio'] = $_POST["bio"];
+		header("Location: main.php");
+		exit;
 		
-		#header("Location: main.php");
-		#exit;
 	}
 ?>
 </table>

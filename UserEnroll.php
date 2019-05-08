@@ -24,11 +24,28 @@
 			<input type="text" name="email" />
 		</td>
 	</tr>
+		<tr>
+		<td>
+			Profile Pic
+		</td>
+		<td>
+			<input type="file" name="picture" />
+		</td>
+	</tr>
+		<tr>
+		<td>
+			Bio
+		</td>
+		<td>
+			<input type="text" name="bio" />
+		</td>
+	</tr>
 	<tr>
 		<td>
 			<input type="submit" value="submit" />
 		</td>
 	</tr>
+</table>
 </form>
 </body>
 </html>

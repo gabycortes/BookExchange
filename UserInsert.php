@@ -5,17 +5,30 @@
 <title>Untitled Document</title>
 </head>
 <body>
+
 <?php
 	include("Connect_Database.php");
 ?>
+
 <?php
-	$userInsert = "insert into users values('" . 
+	if ($_FILES["picture"])
+	{
+		$pathname = "pictures/" . $_FILES['picture']['name'];
+		move_uploaded_file($_FILES['picture']['tmp_name'], $pathname2);
+	}
+	$userInsert = "insert into users values(null, '" . 
 		$_POST["name"] .
 		"', '" .
 		$_POST["email"] .
+		"', '" .
+		$pathname2 .
+		"', '" .
+		$_POST["bio"] .
 		"')";
 
 	$result = mysqli_query($connect, $userInsert); 
+	print $picpath;
+	//header("Location: login.php")
 ?>
 </body>
 </html>
