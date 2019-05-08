@@ -7,9 +7,9 @@
 <body>
 
 <?php
-include("Main.php")
- 
+    include("MainMenu.php");
 ?>
+
 
 <form action="sellingInsert.php" enctype="multipart/form-data" method="post">
 <table align="center">
@@ -49,7 +49,16 @@ include("Main.php")
 			<input type="text" name="description" />
 		</td>
 	</tr>
-
+	
+	<tr>
+		<td>
+			cost
+		</td>
+		<td>
+			<input type="text" name="cost" />
+		</td>
+	</tr>
+	
 
 	<tr>
 		<td>
@@ -59,6 +68,8 @@ include("Main.php")
 			<input type="file" name="pic" />
 		</td>
 	</tr>
+	
+	
 
 
 

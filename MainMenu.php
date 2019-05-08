@@ -1,8 +1,9 @@
-
 <?php
 session_start();
 $name_email = 'name=' . $_SESSION['name'] . 
-'&email=' . $_SESSION['email'];
+					'&email=' . $_SESSION['email'] . 
+					'&picpath=' . $_SESSION['picpath'] . 
+					'&bio=' . $_SESSION['bio'];
 #print $name_email;
 ?>
 
@@ -29,42 +30,65 @@ $name_email = 'name=' . $_SESSION['name'] .
 <div class = "col2">
 <p>
  <a class = "cart" href="#">
-
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </a>
         
 </p>
 </div>
 </div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+</head>
+<body>
+  <h1>
+  Book Exchange
+  </h1>
+  <form action="search.php" method="GET">
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="Main.php?<?php print $name_email; ?>"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav ">
-      <li class="active"><a href="#">Home</a></li>
-        <li><a href="shopping.php?<?php print $name_email; ?>">Shopping</a></li>
-        <li><a href="selling.php?<?php print $name_email; ?>">Selling</a></li>
-        <li><a href="profile.php?<?php print $name_email; ?>">Profile</a></li>
+<input type="text" name="query" />
 
-        <!-- <li class="active"><a href="Main.php?<?php print $name_email; ?>">Home</a></li>
-        <li>  <a class = "li_css_a" href = "shopping.php?<?php print $name_email; ?>">Shopping</a></li>
-        <li> <a class = "li_css_a" href = "selling.php?<?php print $name_email; ?>">Selling</a></li>
-        <li><a class = "li_css_a" href = "profile.php?<?php print $name_email; ?>">Profile</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="ShoppingCart.php?<?php print $name_email; ?>"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<input class="submitbox" type="submit" value="Search" />
+
+</form>
+<div class="jumbotron">
+            <!--can only write 10 when done or time is finished
+            also you cant stop timer when you commence
+            -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                    <a href="shopping.php?<?php print $name_email; ?>">Shopping</a>
+                    </div>
+                    <div class="col-md">
+                            <a href="selling.php?<?php print $name_email; ?>">Selling</a>
+                       </div>
+                       <div class="col-md">
+                       <a href="profile.php?<?php print $name_email; ?>">Profile</a>
+                       </div>
+                       <div class="col-md">
+                       <a href="ShoppingCart.php?<?php print $name_email; ?>"><i class="fas fa-shopping-cart"></i></a>
+
+                       <!-- <i class="fas fa-shopping-cart"></i> -->
+                       </div>
+                       
+                </div>
+                <div class="row">
+
+</div>
+            </div>
+        </div>
+  
+</body>
+</html>
 <!--   
 <div class="container-fluid text-center">    
   <div class="row content">
@@ -91,8 +115,3 @@ $name_email = 'name=' . $_SESSION['name'] .
     </div>
   </div>
 </div> -->
-
-
-
-
-

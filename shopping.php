@@ -16,7 +16,7 @@
 	$selectBooks = "select * from books";
 	$results = mysqli_query($connect, $selectBooks);
 ?>
-<table align="center" border="2" width=400>
+<table align="center" border="2" width=400  class="table table-bordered table-striped table-hover">
 	<tr>
 		<th>
 			Title

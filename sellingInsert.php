@@ -3,10 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
-
 </head>
 <body>
-	<table>
 <?php
 date_default_timezone_set("America/Los_Angeles");
 	$currentTime = date("Y-m-d H:i:s");
@@ -25,7 +23,6 @@ date_default_timezone_set("America/Los_Angeles");
 ?>
 
 <?php
-
 	$bookInsert = "insert into books values(null, '" . 
 		$_POST["name"] .
 		"', '" .
@@ -38,11 +35,12 @@ date_default_timezone_set("America/Los_Angeles");
 		$currentTime .
 		"', '" .
 		$pathname .
+		"', '" .
+		$_POST["cost"] .
 		"')";
 	$result = mysqli_query($connect, $bookInsert); 
 	header("Location: shopping.php")
 ?>
 
-</table>
 </body>
 </html>
