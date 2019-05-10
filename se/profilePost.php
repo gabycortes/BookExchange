@@ -1,35 +1,59 @@
 
-
-
+<html>
+<head>
+<meta charset="utf-8">
+<title>Profile Post Page</title>
+</head>
+<body>
 
 <?php
     include("MainMenu.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container text-center">
-    <h1>
-        welcome to your Profile!
-    </h1>
-    <div class="row">
-        <div class="col">
-        <img src="images/profilePic.jpg" alt="Snow" style="width:100%">
+<?php
+	include("Connect_Database.php");
+?>
+
+<?php
+	$profile = "select * from users where name='" .
+				$_GET["name"] ."'";
+	$results2 = mysqli_query($connect, $profile);
+?>
 
 
-        </div>
-        <div class="col">
-            <div class="card"></div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni hic vero animi sed ipsum dolore nobis, repellat maiores voluptas cupiditate accusamus quas sunt ex nostrum officiis exercitationem ut quam sit.
-            </div>
-</div>
-    </div>
+<table align="center">
+	<tr>
+		<td>
+		<p>
+		<font size="6">
+			<?php 
+			
+			print "Welcome to your Profile!";
+			?>
+		</font>
+		</p
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>
+				<?php 
+				while($row = mysqli_fetch_assoc($results2))
+				{
+					print "<tr>";
+					print "<td>";
+					print "<img src='";
+					print $row["picpath"] . "' height='150' width='150'>";
+					print "</td>";
+					print "<td>";
+					print $row["bio"];
+					print "</td>";				
+					print "</tr>";
+				}
+				?> 
+		</P>
+		</td>
+	</tr>
+</table>
 </body>
-</html>
+</html> 

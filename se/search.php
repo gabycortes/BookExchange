@@ -52,7 +52,18 @@ include("MainMenu.php")
         WHERE (`title` LIKE '%".$query."%') OR (`name` LIKE '%".$query."%')";       
 
         $raw_results = mysqli_query($connect,$sql);
-       
+	   
+		
+		if(mysqli_num_rows($raw_results)==0){
+			print "<h5>";
+			print "no results";
+			print "</h5>";
+		}
+
+
+
+
+
         // if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
              
         //     while($results = mysqli_fetch_array($raw_results)){
@@ -68,7 +79,7 @@ include("MainMenu.php")
         // }
          
     }
-    else{ // if query length is less than minimum
+    else{ //if query length is less than minimum
         echo "Minimum length is ".$min_length;
     }
 ?>

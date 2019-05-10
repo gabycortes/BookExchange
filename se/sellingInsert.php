@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
 </head>
+
 <body>
-<?php
+    <?php
 date_default_timezone_set("America/Los_Angeles");
 	$currentTime = date("Y-m-d H:i:s");
 	// print ($currentTime);
 ?>
-<?php
+    <?php
 	if ($_FILES["pic"])
 	{
 		$pathname = "images/" . $_FILES['pic']['name'];
@@ -18,11 +20,11 @@ date_default_timezone_set("America/Los_Angeles");
 	}
 	// print ($pathname);
 ?>
-<?php
+    <?php
 	include("Connect_Database.php");
 ?>
 
-<?php
+    <?php
 	$bookInsert = "insert into books values(null, '" . 
 		$_POST["name"] .
 		"', '" .
@@ -43,4 +45,5 @@ date_default_timezone_set("America/Los_Angeles");
 ?>
 
 </body>
+
 </html>

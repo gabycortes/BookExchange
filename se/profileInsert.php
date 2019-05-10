@@ -1,51 +1,36 @@
-
-<!-- <?php
-    
+<!---
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Profile Insert</title>
+</head>
+<body>
+<?php
+    include("MainMenu.php");
 ?>
 <?php
 	if ($_FILES["pic"])
 	{
-		$pathname2 = "images/" . $_FILES['pic']['name'];
+		$pathname2 = "pictures/" . $_FILES['pic']['name'];
 		move_uploaded_file($_FILES['pic']['tmp_name'], $pathname2);
 	}
 ?>
-
-<?php 
-    include("Connect_Database.php"); 
-    // mysql_query("update users set picpath = '$pathname2' where email= '$_GET['email']'  ");
+<?php
+	include("Connect_Database.php");
 ?>
- -->
-
-
- <?php
-    include("MainMenu.php");
+<?php
+	$profileInsert = "update users picpath = '" . 
+		$pathname2 . 
+		"' where name ='" . 
+		$_POST["name"] . 
+		"' AND email = '" . 
+		$_POST["email"] . 
+		"';";
+		
+	$result = mysqli_query($connect, $profileInsert); 
+	//header("Location: profile.php")
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container text-center">
-    <h1>
-        welcome to your Profile!
-    </h1>
-    <div class="row">
-        <div class="col">
-        <img src="images/profilePic.jpg" alt="Snow" style="width:50%">
-
-
-        </div>
-        <div class="col">
-            <div class="card"></div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni hic vero animi sed ipsum dolore nobis, repellat maiores voluptas cupiditate accusamus quas sunt ex nostrum officiis exercitationem ut quam sit.
-            </div>
-</div>
-    </div>
 </body>
 </html>
-
+--->

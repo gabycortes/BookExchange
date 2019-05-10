@@ -6,7 +6,8 @@
 <body>
 
 <?php
-    include("MainMenu.php");
+	include("MainMenu.php");
+	
 ?>
 <?php
 	include("Connect_Database.php");
@@ -38,9 +39,15 @@
 <?php
 	while($row = mysqli_fetch_assoc($results))
 	{
-		print "<tr>";
+		$bookTitle = $row["title"];
+		$postTime = $row["posttime"];
+		$userName = $_GET['name'];
+		$userEmail = $_GET['email'];
+		print "<tr >";
 		print "<td>";
-		print ($row["title"]);
+		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail'";
+		print "title=" . $row["title"] . "'>";
+		print $row["title"];
 		print "</td>";
 		print "<td>";
 		print ($row["description"]);
@@ -52,8 +59,6 @@
 		print "$";
 		print ($row["cost"]);
 		print "</td>";
-
-
 	
 		print "<td>";
 		print "<img src='";
