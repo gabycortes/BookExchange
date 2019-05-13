@@ -1,5 +1,3 @@
-lines (31 sloc)  622 Bytes
-    
 <!doctype html>
 <html>
 <head>
@@ -13,26 +11,23 @@ lines (31 sloc)  622 Bytes
 ?>
 
 <?php
-
-if ($_FILES["pic"])
-{
-    $pathname = "images/" . $_FILES['pic']['name'];
-    move_uploaded_file($_FILES['pic']['tmp_name'], $pathname);
-}
-// print ($pathname);
-
-	$userInsert = "insert into users (name, email, picpath, bio)  values('" . 
+	if ($_FILES["picture"])
+	{
+		$pathname2 = "images/" . $_FILES['picture']['name'];
+		move_uploaded_file($_FILES['picture']['tmp_name'], $pathname2);
+	}
+	$userInsert = "insert into users(name,email,picpath,bio) values('" . 
 		$_POST["name"] .
 		"', '" .
 		$_POST["email"] .
 		"', '" .
-		$pathname .
+		$pathname2 .
 		"', '" .
 		$_POST["bio"] .
 		"')";
 	$result = mysqli_query($connect, $userInsert); 
-
-	header("Location: login.html")
+	
+	header("Location: login.php")
 ?>
 </body>
 </html>

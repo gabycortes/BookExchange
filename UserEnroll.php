@@ -6,7 +6,7 @@
 </head>
 <body>
 <p align="center"> User Enroll Page</p>
-<form action="UserInsert.php"  enctype="multipart/form-data" method="post">
+<form action="UserInsert.php" enctype="multipart/form-data" method="post">
 <table align="center">
 	<tr>
 		<td>
@@ -29,7 +29,7 @@
 			Profile Pic
 		</td>
 		<td>
-			<input type="file" name="pic" />
+			<input type="file" name="picture" />
 		</td>
 	</tr>
 		<tr>

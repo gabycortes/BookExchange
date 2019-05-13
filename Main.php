@@ -1,12 +1,15 @@
 <html>
-    <head>  
-<div class = "topPage">
-   
-</div>
+
+<head>
+    <div class="topPage">
+        <h1>Book Exchange</h1>
+    </div>
 </head>
-        <body>
-        <?php
+
+<body>
+    <?php
 include("MainMenu.php");
         ?>
-        </body>
-        </html>
+</body>
+
+</html>

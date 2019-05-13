@@ -11,7 +11,6 @@
 ?>
 
 <?php
-
 	$userDelete = "delete from cart where book_id='". 
 	$_GET["bookId"] ."'";
     $result = mysqli_query($connect, $userDelete);
@@ -24,7 +23,6 @@ $_GET["bookId"] .
 "')";
     $result2 = mysqli_query($connect, $saveForLater);
 	header("Location: ShoppingCart.php?" . 'name=' . $_GET['name'] .  '&email=' . $_GET['email']);
-
 ?>
 </body>
 </html>

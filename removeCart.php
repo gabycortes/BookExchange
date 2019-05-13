@@ -15,7 +15,6 @@
 	$_GET["bookId"] ."'";
 	$result = mysqli_query($connect, $userDelete);
 	header("Location: ShoppingCart.php?" . 'name=' . $_GET['name'] .  '&email=' . $_GET['email']);
-
 ?>
 </body>
 </html>

@@ -8,11 +8,9 @@
 <body>
 <?php
     include("Connect_Database.php");
-
 ?>
 
 <?php
-
 	$cartDelete = "delete from saveforlater where book_id='". 
 	$_GET["bookId"] . "'and name='" . $_GET['name'] . "'";
 	$result = mysqli_query($connect, $cartDelete);

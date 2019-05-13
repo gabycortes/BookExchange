@@ -16,7 +16,6 @@ include("MainMenu.php")
 <?php
 	$selectCart = "select * from cart where name='" . $_GET["name"] . "'";
 	$results = mysqli_query($connect, $selectCart);
-
 ?>
 <div class="container">
 <div class="row">
@@ -71,8 +70,6 @@ include("MainMenu.php")
 		print "Save for Later";
 		print "</td>";
 		print "<td>";
-
-
 		print "<a href='removeCart.php?";
         print "bookId=" . $row2["bookId"] .  '&name=' . $_GET['name'] . '&email=' . $_GET['email'] . "'>";
 		print "<i class=\"fas fa-trash-alt\"></i>";
@@ -127,7 +124,6 @@ include("MainMenu.php")
 		print $row2["picpath"] . "' height = 80px width = 80px>";
 		print "</td>";
 		print "<td>";
-
 		print "<a href='removeSavedCart.php?";
         print "bookId=" . $row2["bookId"] .  '&name=' . $_GET['name'] . '&email=' . $_GET['email'] . "'>";
 		print "Move to Cart";

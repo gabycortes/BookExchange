@@ -52,7 +52,18 @@ include("MainMenu.php")
         WHERE (`title` LIKE '%".$query."%') OR (`name` LIKE '%".$query."%')";       
 
         $raw_results = mysqli_query($connect,$sql);
-       
+	   
+		
+		if(mysqli_num_rows($raw_results)==0){
+			print "<h5>";
+			print "no results";
+			print "</h5>";
+		}
+
+
+
+
+
         // if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
              
         //     while($results = mysqli_fetch_array($raw_results)){
@@ -68,7 +79,7 @@ include("MainMenu.php")
         // }
          
     }
-    else{ // if query length is less than minimum
+    else{ //if query length is less than minimum
         echo "Minimum length is ".$min_length;
     }
 ?>
@@ -77,9 +88,15 @@ include("MainMenu.php")
 <?php
 	while($row = mysqli_fetch_assoc($raw_results))
 	{
+		$bookTitle = $row["title"];
+		$postTime = $row["posttime"];
+		$userName = $_GET['name'];
+		$userEmail = $_GET['email'];
 		print "<tr>";
 		print "<td>";
-		print ($row["title"]);
+		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail'";
+		print "title=" . $row["title"] . "'>";
+		print $row["title"];
 		print "</td>";
 		print "<td>";
 		print ($row["description"]);

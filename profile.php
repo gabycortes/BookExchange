@@ -45,49 +45,57 @@
 					print $row["picpath"] . "' height='150' width='150'>";
 					print "</td>";
 					print "<td>";
+					print "My Bio: ";
 					print $row["bio"];
 					print "</td>";				
 					print "</tr>";
 				}
 			?> 
 </table>	
-<table align="center"  class="table table-bordered table-striped table-hover">
-
-	<tr>
-
-		<p>
-		<font size="6">
 			<?php 		
 				print "Books I am selling: ";
 			?>
-		</font>
-		</p
-	
-	</tr>
+<table class="table table-bordered table-striped table-hover">
+
 			<?php 
 			
-			$profile = "select * from books where name='" .
-						$_GET["name"] ."'";
+			$profile = "select * from books where email='" .
+						$_GET["email"] ."'";
 						$results2 = mysqli_query($connect, $profile);
-	
 				while($row = mysqli_fetch_assoc($results2))		
 				{
-			
-			print "<tr>";
-		print "<td>";
-		print ($row["title"]);
-		print "</td>";
-		print "<td>";
-		print ($row["name"]);
-		print "</td>";
-		print "<td>";
-		print ($row["posttime"]);
-		print "</td>";
-		print "<td>";
-		print "<img src='";
-		print $row["picpath"] . "' height='50' width='50'>";
-		print "</td>";
-		print "</tr>";
+					$bookTitle = $row["title"];
+					$postTime = $row["posttime"];
+					$userName = $_GET['name'];
+					$userEmail = $_GET['email'];
+					print "<tr >";
+					print "<td>";
+					print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail'";
+					print "title=" . $row["title"] . "'>";
+					print $row["title"];
+					print "</td>";
+					print "<td>";
+					print ($row["description"]);
+					print "</td>";
+					print "<td>";
+					print ($row["posttime"]);
+					print "</td>";
+					print "<td>";
+					print "$";
+					print ($row["cost"]);
+					print "</td>";
+				
+					print "<td>";
+					print "<img src='";
+					print $row["picpath"] . "' height = 80px width = 80px>";
+					print "</td>";
+					print "<td>";
+					print "<a href='bookDelete.php?";
+					print "name=" . $_GET['name'] . '&email=' . $_GET['email'] . '&picpath=' . $_GET['picpath'] . '&bio=' . $_GET['bio'] . '&bookId=' . $row['bookId'] . "'>";
+					print "DELETE";
+					print "</a>";
+					print "</td>";
+					print "</tr>";
 				}
 			?> 
 </table>		
