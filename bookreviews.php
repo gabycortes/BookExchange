@@ -135,7 +135,7 @@
 <br>
 <hr>
 
-	<form id="userReviews" action="bookreviews.php?name=<?php echo $bookTitle; ?>&postime=<?php echo $postTime; ?>&userName=<?php echo $userName; ?>&userEmail=<?php echo $userEmail; ?>" method="POST" >
+	<form id="userReviews" action="bookreviews.php?name=<?php echo $bookTitle; ?>&postime=<?php echo $postTime; ?>&userName=<?php echo $userName; ?>&userEmail=<?php echo $userEmail; ?>&email=<?php echo $userEmail; ?>" method="POST" >
 	<input type="hidden" name="updateReview" value="true">
 	<input type="hidden" name="bookTitle" value="<?php echo $bookTitle; ?>">
 	<input type="hidden" name="bookID" value="<?php echo $bookID; ?>">

@@ -46,7 +46,7 @@
 		$userEmail = $_GET['email'];
 		print "<tr >";
 		print "<td>";
-		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail'";
+		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail&email=$userEmail'";
 		print "title=" . $row["title"] . "'>";
 		print $row["title"];
 		print "</td>";

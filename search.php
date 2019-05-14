@@ -94,7 +94,7 @@ include("MainMenu.php")
 		$userEmail = $_GET['email'];
 		print "<tr>";
 		print "<td>";
-		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail'";
+		print "<a href='bookreviews.php?name=$bookTitle&postime=$postTime&userName=$userName&userEmail=$userEmail&email=$userEmail'";
 		print "title=" . $row["title"] . "'>";
 		print $row["title"];
 		print "</td>";
@@ -116,8 +116,7 @@ include("MainMenu.php")
 		print $row["picpath"] . "' height = 80px width = 80px>";
 		print "</td>";
 		print "<td>";
-		// $book = 'bookId=' . $row["bookId"] . '&booktitle=' . $row["title"] .
-		// '&bookname=' . $row["name"] . '&picpath=' $row["picpath"];
+
 		print "<a href='AddCart.php?";
 		print "bookId=" . $row["bookId"] .  '&name=' . $_GET['name'] . '&email=' . $_GET['email'] . "'>";
 		print "ADD TO CART";
